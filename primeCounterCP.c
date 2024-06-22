@@ -18,23 +18,36 @@ struct lfq_ctx queue;
 int total_dequeued_number;
 int total_enqueued_number;
 int producer_finished = 0;
-
+time_t program_start, program_end;
 pthread_mutex_t queue_lock = PTHREAD_MUTEX_INITIALIZER;
 pthread_cond_t flag = PTHREAD_COND_INITIALIZER;
 
+bool isPrime(int n) {
+    if (n <= 1) {
+        return false;
+    }
+    for (int i = 2; i * i <= n; i++) {
+        if (n % i == 0) {
+            return false;
+        }
+    }
+    return true;
+}
 
 void *producer(void *arg) {
     arg_set *set = arg;
-    int tid = set->tid;
+    //int tid = set->tid;
     int num;
     while (scanf("%d", &num) != EOF) {   
         int *data = malloc(sizeof(int));
         *data = num;
         set->counter++;
         lfq_enqueue(&queue, data);
-        printf("Producer %d enqueued %d\n", tid, *data);
+        //printf("Producer %d enqueued %d\n", tid, *data);
     }
+    pthread_mutex_lock(&queue_lock);
     producer_finished = 1;
+    pthread_mutex_unlock(&queue_lock);
     return NULL;
 }
 
@@ -46,16 +59,14 @@ void *consumer(void *arg) {
     while(1) {
         data = (int *)lfq_dequeue_tid(&queue, tid);
         if (data) {
-            set->counter++;
-            printf("Consumer %d dequeued %d\n", tid, *data);
+            if(isPrime(*data))
+                set->counter++;
+            //printf("Consumer %d dequeued %d\n", tid, *data);
             free(data);
         } else {
-            printf("Consumer %d found queue empty\n", tid);
-            if(producer_finished){
-                break;
-            }
+            //printf("Consumer %d found queue empty\n", tid);
+            break;
         }
-        
     }
     return NULL;
 }
@@ -70,7 +81,8 @@ int main() {
         return EXIT_FAILURE;
     }
 
-    
+    time(&program_start);
+
     // Create producer threads
     for (int i = 0; i < P_NUM_THREADS; ++i) {  
         producer_set[i].tid = i;
@@ -80,6 +92,8 @@ int main() {
             return EXIT_FAILURE;
         }
     }
+
+    sleep(1);
 
     // Create consumer threads
     for (int i = 0; i < C_NUM_THREADS; ++i) {
@@ -91,6 +105,8 @@ int main() {
         }
     }
 
+    time(&program_end);
+
     for (int i = 0; i < P_NUM_THREADS; i++) {
         total_enqueued_number += producer_set[i].counter;
         pthread_join(producers[i], NULL);
@@ -100,6 +116,9 @@ int main() {
         total_dequeued_number += consumer_set[i].counter;
         pthread_join(consumers[i], NULL);
     }
+
+    double elapsed_time = difftime(program_end, program_start);
+    printf("%.2f seconds: total program time\n", elapsed_time);
 
     printf("out: %d in: %d\n", total_dequeued_number, total_enqueued_number);
 
