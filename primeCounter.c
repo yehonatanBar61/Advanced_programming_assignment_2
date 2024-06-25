@@ -21,7 +21,6 @@ int main() {
     int num;
     int total_counter = 0;
 
-    time(&program_start);
 
     // Read numbers from stdin until end of file
     while (scanf("%d", &num) != EOF) {   
@@ -30,12 +29,10 @@ int main() {
         }
     }
 
-    time(&program_end);
+    //time(&program_end);
     
     printf("%d total primes.\n", total_counter);
 
-    double elapsed_time = difftime(program_end, program_start);
-    printf("%.2f seconds: total program time\n", elapsed_time);
 
     return 0;
 }

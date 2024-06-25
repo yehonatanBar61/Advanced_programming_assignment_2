@@ -1,2 +1,5 @@
 # Ignore compiled object files
 *.o
+
+# Ignore all files without extensions
+*.*
