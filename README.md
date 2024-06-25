@@ -40,6 +40,6 @@ for exmple with 10,000,000 random numbers and seed = 10
 ```
 
 ## Images:
-![Map](pictures$logs/ValgrindPickSnap.png)
+![timeCheck](pictures$logs/ValgrindPickSnap.png)
 ![Map](timeCheck.png)
 
