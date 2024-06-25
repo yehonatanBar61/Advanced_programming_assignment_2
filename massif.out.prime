@@ -1,0 +1,216 @@
+desc: --massif-out-file=massif.out.prime
+cmd: ./myPrimeCounter
+time_unit: i
+#-----------
+snapshot=0
+#-----------
+time=0
+mem_heap_B=0
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=1
+#-----------
+time=167539
+mem_heap_B=272
+mem_heap_extra_B=8
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=2
+#-----------
+time=169758
+mem_heap_B=544
+mem_heap_extra_B=16
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=3
+#-----------
+time=170354
+mem_heap_B=816
+mem_heap_extra_B=24
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=4
+#-----------
+time=172732
+mem_heap_B=1328
+mem_heap_extra_B=32
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=5
+#-----------
+time=173170
+mem_heap_B=1600
+mem_heap_extra_B=40
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=6
+#-----------
+time=173766
+mem_heap_B=1872
+mem_heap_extra_B=48
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=7
+#-----------
+time=174362
+mem_heap_B=2144
+mem_heap_extra_B=56
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=8
+#-----------
+time=175276
+mem_heap_B=2416
+mem_heap_extra_B=64
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=9
+#-----------
+time=385586
+mem_heap_B=2688
+mem_heap_extra_B=72
+mem_stacks_B=0
+heap_tree=detailed
+n2: 2688 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 2176 0x40149DA: allocate_dtv (dl-tls.c:286)
+  n1: 2176 0x40149DA: _dl_allocate_tls (dl-tls.c:532)
+   n1: 2176 0x4853322: allocate_stack (allocatestack.c:622)
+    n1: 2176 0x4853322: pthread_create@@GLIBC_2.2.5 (pthread_create.c:660)
+     n0: 2176 0x10923D: main (in /mnt/c/Users/ברוכסון/OneDrive/מסמכים/יהונתן/אוניברסיטה עבודות/שנה ד/סמסטר ב/תכנות מתקדם/task_2/Advanced_programming_assignment_2/myPrimeCounter)
+ n1: 512 0x48EED03: _IO_file_doallocate (filedoalloc.c:101)
+  n1: 512 0x48FEECF: _IO_doallocbuf (genops.c:347)
+   n1: 512 0x48FDCA3: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:486)
+    n1: 512 0x48FEF85: _IO_default_uflow (genops.c:362)
+     n1: 512 0x48D127F: __vfscanf_internal (vfscanf-internal.c:627)
+      n1: 512 0x48D0161: __isoc99_scanf (isoc99_scanf.c:30)
+       n1: 512 0x109653: consumer (in /mnt/c/Users/ברוכסון/OneDrive/מסמכים/יהונתן/אוניברסיטה עבודות/שנה ד/סמסטר ב/תכנות מתקדם/task_2/Advanced_programming_assignment_2/myPrimeCounter)
+        n1: 512 0x4852608: start_thread (pthread_create.c:477)
+         n0: 512 0x498C132: clone (clone.S:95)
+#-----------
+snapshot=10
+#-----------
+time=19457939201
+mem_heap_B=2688
+mem_heap_extra_B=72
+mem_stacks_B=0
+heap_tree=peak
+n2: 2688 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 2176 0x40149DA: allocate_dtv (dl-tls.c:286)
+  n1: 2176 0x40149DA: _dl_allocate_tls (dl-tls.c:532)
+   n1: 2176 0x4853322: allocate_stack (allocatestack.c:622)
+    n1: 2176 0x4853322: pthread_create@@GLIBC_2.2.5 (pthread_create.c:660)
+     n0: 2176 0x10923D: main (in /mnt/c/Users/ברוכסון/OneDrive/מסמכים/יהונתן/אוניברסיטה עבודות/שנה ד/סמסטר ב/תכנות מתקדם/task_2/Advanced_programming_assignment_2/myPrimeCounter)
+ n1: 512 0x48EED03: _IO_file_doallocate (filedoalloc.c:101)
+  n1: 512 0x48FEECF: _IO_doallocbuf (genops.c:347)
+   n1: 512 0x48FDCA3: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:486)
+    n1: 512 0x48FEF85: _IO_default_uflow (genops.c:362)
+     n1: 512 0x48D127F: __vfscanf_internal (vfscanf-internal.c:627)
+      n1: 512 0x48D0161: __isoc99_scanf (isoc99_scanf.c:30)
+       n1: 512 0x109653: consumer (in /mnt/c/Users/ברוכסון/OneDrive/מסמכים/יהונתן/אוניברסיטה עבודות/שנה ד/סמסטר ב/תכנות מתקדם/task_2/Advanced_programming_assignment_2/myPrimeCounter)
+        n1: 512 0x4852608: start_thread (pthread_create.c:477)
+         n0: 512 0x498C132: clone (clone.S:95)
+#-----------
+snapshot=11
+#-----------
+time=19457939201
+mem_heap_B=2416
+mem_heap_extra_B=64
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=12
+#-----------
+time=19457940578
+mem_heap_B=2144
+mem_heap_extra_B=56
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=13
+#-----------
+time=19457941171
+mem_heap_B=1872
+mem_heap_extra_B=48
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=14
+#-----------
+time=19457941764
+mem_heap_B=1600
+mem_heap_extra_B=40
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=15
+#-----------
+time=19457942134
+mem_heap_B=2624
+mem_heap_extra_B=48
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=16
+#-----------
+time=19457947576
+mem_heap_B=2112
+mem_heap_extra_B=40
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=17
+#-----------
+time=19457947610
+mem_heap_B=1088
+mem_heap_extra_B=32
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=18
+#-----------
+time=19457949005
+mem_heap_B=816
+mem_heap_extra_B=24
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=19
+#-----------
+time=19457949439
+mem_heap_B=544
+mem_heap_extra_B=16
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=20
+#-----------
+time=19457949873
+mem_heap_B=272
+mem_heap_extra_B=8
+mem_stacks_B=0
+heap_tree=detailed
+n2: 272 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 272 0x40149DA: allocate_dtv (dl-tls.c:286)
+  n1: 272 0x40149DA: _dl_allocate_tls (dl-tls.c:532)
+   n1: 272 0x4853322: allocate_stack (allocatestack.c:622)
+    n1: 272 0x4853322: pthread_create@@GLIBC_2.2.5 (pthread_create.c:660)
+     n0: 272 0x10923D: main (in /mnt/c/Users/ברוכסון/OneDrive/מסמכים/יהונתן/אוניברסיטה עבודות/שנה ד/סמסטר ב/תכנות מתקדם/task_2/Advanced_programming_assignment_2/myPrimeCounter)
+ n0: 0 in 1 place, below massif's threshold (1.00%)
+#-----------
+snapshot=21
+#-----------
+time=19457950307
+mem_heap_B=0
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
